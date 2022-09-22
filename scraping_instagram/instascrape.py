@@ -20,3 +20,19 @@ from time import sleep
 
 USER = 'username'
 SECRET_PASS = 'password'
+
+    def __init__(self,user,pw):
+        self.user = user
+        self.actionChains = ActionChains
+        #self.firefox = webdriver.Firefox()
+
+        profile = webdriver.FirefoxProfile()
+
+        #add geo location setting to a differnt lat long
+        profile.set_preference("geo.prompt.testing", True)
+        profile.set_preference("geo.prompt.testing.allow", True)
+        profile.set_preference("geo.provider.testing", True)
+      
+        profile.set_preference("geo.provider.network.url", 'data:application/json,{"location": {"lat": 6.589, "lng": 106.84}, "accuracy": 27000.0}')
+
+
